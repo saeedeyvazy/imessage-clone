@@ -18,9 +18,13 @@
 	bottom: -15px;
 	right: 0;
 	color: lightgray;
+	white-space: nowrap;
 }
 .message__sender {
 	margin-left: auto;
+}
+.message__photo {
+	font-size: large;
 }
 .message__sender > .message__photo {
 	order: 1;
