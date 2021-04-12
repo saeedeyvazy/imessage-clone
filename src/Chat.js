@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux'
 import db from './firebase'
 import { selectUser } from './features/userSlice'
 import firebase from 'firebase'
+import FlipMove from 'react-flip-move'
 
 function Chat() {
 	const [msg, setMsg] = useState('')
@@ -16,7 +17,6 @@ function Chat() {
 	const user = useSelector(selectUser)
 
 	const sendMsg = (e) => {
-		console.log(user.name)
 		e.preventDefault()
 		db.collection('chats').doc(chatId).collection('messages').add({
 			timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -34,7 +34,7 @@ function Chat() {
 			db.collection('chats')
 				.doc(chatId)
 				.collection('messages')
-				.orderBy('timestamp', 'desc')
+				.orderBy('timestamp', 'asc')
 				.onSnapshot((snapshot) =>
 					setMessages(
 						snapshot.docs.map((item) => ({
@@ -54,9 +54,19 @@ function Chat() {
 				<strong>Details</strong>
 			</div>
 			<div className='chat__messages'>
-				{messages.map(({ id, data: { message } }) => (
-					<Message msg={message} key={id} />
-				))}
+				<FlipMove>
+					{messages.map(
+						({ id, data: { message, email, uid, name, photo, timestamp } }) => (
+							<Message
+								msg={message}
+								senderEmail={email}
+								key={id}
+								avatar={photo}
+								time={timestamp}
+							/>
+						)
+					)}
+				</FlipMove>
 			</div>
 			<div className='chat__input'>
 				<form>
