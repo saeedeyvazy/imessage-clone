@@ -1,0 +1,41 @@
+.sidebar {
+	background-color: #eee;
+	color: gray;
+	flex: 0.35;
+	height: 100vh;
+	flex-direction: column;
+	border-right: 1px solid lightgray;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidebar__header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+
+.search__input {
+	border: none;
+	background-color: transparent;
+}
+
+.sidebar__input {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #c4c4c4;
+	padding: 10px;
+	height: 10px;
+	border-radius: 3px;
+	margin-left: 5px;
+}
+
+.contact {
+	flex: 1;
+}
+.sidebar__chat {
+	overflow: scroll;
+	height: 100%;
+}

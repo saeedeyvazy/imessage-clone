@@ -1,0 +1,24 @@
+.chat {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	border-bottom: 1px solid lightgray;
+	cursor: pointer;
+}
+.chat:hover {
+	background-color: #3e93fd;
+	color: white;
+}
+
+.chat__info {
+	display: flex;
+	flex-direction: column;
+	margin-left: 15px;
+	position: relative;
+	flex: 1;
+}
+.chat__info > small {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
