@@ -7,6 +7,7 @@ import { selectUser } from './features/userSlice'
 import db, { auth } from './firebase'
 import './Sidebar.css'
 import SidebarChat from './SidebarChat'
+
 function Sidebar() {
 	const user = useSelector(selectUser)
 	const [chats, setChats] = useState([])
