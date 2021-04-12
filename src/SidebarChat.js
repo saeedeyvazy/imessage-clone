@@ -2,7 +2,7 @@ import { Avatar } from '@material-ui/core'
 import React from 'react'
 import './SidebarChat.css'
 
-function SidebarChat({ channelName, message }) {
+function SidebarChat({ id, channelName, message }) {
 	return (
 		<div className='chat'>
 			<Avatar />

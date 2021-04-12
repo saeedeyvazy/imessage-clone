@@ -39,3 +39,7 @@
 	overflow: scroll;
 	height: 100%;
 }
+
+.sidebar__avatar {
+	cursor: pointer;
+}
